@@ -8,5 +8,6 @@
 import Foundation
 
 class AppInfo: NSObject {
+    var something: String = ""
     
 }
