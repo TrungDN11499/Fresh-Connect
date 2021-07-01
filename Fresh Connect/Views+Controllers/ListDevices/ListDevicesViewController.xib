@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListDevicesViewController" customModule="Fresh_Connect" customModuleProvider="target">
             <connections>
                 <outlet property="devicesListTableView" destination="Bvg-Sh-KL9" id="9Qy-KY-q0s"/>
+                <outlet property="myDeviceCollectionView" destination="RAX-nt-zWM" id="sQM-pL-RBg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bvg-Sh-KL9">
-                    <rect key="frame" x="0.0" y="82.5" width="414" height="779.5"/>
+                    <rect key="frame" x="0.0" y="192.5" width="414" height="669.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="5dS-98-X2B"/>
@@ -28,7 +29,7 @@
                     </connections>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CN1-rT-967">
-                    <rect key="frame" x="10" y="54" width="216.5" height="18.5"/>
+                    <rect key="frame" x="10" y="164" width="216.5" height="18.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCANING FOR DEVICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-eS-vMi">
                             <rect key="frame" x="0.0" y="0.0" width="176.5" height="18.5"/>
@@ -44,18 +45,38 @@
                         <constraint firstAttribute="height" constant="18.5" id="Q7y-Pt-wRW"/>
                     </constraints>
                 </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RAX-nt-zWM">
+                    <rect key="frame" x="10" y="54" width="394" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="3Lf-5B-eeU"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YSq-gp-U4E">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="eyg-WR-oah"/>
+                        <outlet property="delegate" destination="-1" id="nou-AO-eca"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="CN1-rT-967" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="5bk-fw-Qka"/>
-                <constraint firstItem="CN1-rT-967" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="a0i-4Y-iRe"/>
+                <constraint firstItem="CN1-rT-967" firstAttribute="top" secondItem="RAX-nt-zWM" secondAttribute="bottom" constant="10" id="GLs-Ze-1kU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RAX-nt-zWM" secondAttribute="trailing" constant="10" id="QRm-9Z-aiU"/>
+                <constraint firstItem="RAX-nt-zWM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Tf0-g9-wP3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bvg-Sh-KL9" secondAttribute="trailing" id="bsG-94-FRj"/>
+                <constraint firstItem="RAX-nt-zWM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="cF7-we-9YE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bvg-Sh-KL9" secondAttribute="bottom" id="s0H-Oz-laK"/>
                 <constraint firstItem="Bvg-Sh-KL9" firstAttribute="top" secondItem="CN1-rT-967" secondAttribute="bottom" constant="10" id="sDr-PB-1AY"/>
                 <constraint firstItem="Bvg-Sh-KL9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vdT-JW-VNH"/>
             </constraints>
-            <point key="canvasLocation" x="47.826086956521742" y="8.7053571428571423"/>
+            <point key="canvasLocation" x="54" y="-64"/>
         </view>
     </objects>
     <resources>

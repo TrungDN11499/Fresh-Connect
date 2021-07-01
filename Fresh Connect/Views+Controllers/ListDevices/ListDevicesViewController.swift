@@ -12,19 +12,35 @@ class ListDevicesViewController: UIViewController {
     
     var centralManager: CBCentralManager!
     @IBOutlet weak var devicesListTableView: UITableView!
+    @IBOutlet weak var myDeviceCollectionView: UICollectionView!
     
-    var listDevices = [DeviceModel]() {
+    var listDevices = [DeviceModel]()
+    
+    var myDevices = [MyDeviceModel]() {
         didSet {
-            let newIndexPath = IndexPath(row: (listDevices.count) - 1, section: 0)
-            self.devicesListTableView.insertRows(at: [newIndexPath], with: .fade)
+            self.myDeviceCollectionView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+
         self.navigationItem.title = "Fresh Connect"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
         ListDevicesTableViewCell.registerCellByNib(self.devicesListTableView)
+        MyDevicesCollectionViewCell.registerCellByNib(self.myDeviceCollectionView)
+        
+        if let myDevices = AppInfo.myDevices {
+            if myDevices.count != 0 {
+                self.myDevices = myDevices
+            }
+        }
+        
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
 
@@ -64,7 +80,6 @@ extension ListDevicesViewController: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("connected")
-        self.centralManager.stopScan()
         let measuringController = MeasuringViewController(central: self.centralManager, peripheral: peripheral)
         self.navigationController?.pushViewController(measuringController, animated: true)
     }
@@ -72,39 +87,80 @@ extension ListDevicesViewController: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
                         advertisementData: [String: Any], rssi RSSI: NSNumber) {
         
-        var canAppend = true
         
-        // add the first item.
-        if listDevices.count == 0  {
-            if let peripheralName = peripheral.name?.lowercased() {
-                if peripheralName.contains("scale") {
-                    self.listDevices.append(DeviceModel(device: peripheral, deviceType: .scale))
-                } else {
-                    self.listDevices.append(DeviceModel(device: peripheral, deviceType: .other))
+        
+        if peripheral.name == "1SK-SmartScale68" {
+            var canAppend = true
+        
+            for i in 0 ..< self.myDevices.count {
+                if peripheral.identifier.uuidString == self.myDevices[i].id {
+                    self.myDevices[i].canConnect = true
+                    self.myDevices[i].peripheral = peripheral
+                    self.myDeviceCollectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
+                    canAppend = false
+                    break
                 }
             }
-        }
-        
-        // loop through the list to check for duplication.
-        for device in self.listDevices {
-            if device.device.identifier == peripheral.identifier  {
-                canAppend = false
-                break
+            
+            // loop through the list to check for duplication.
+            if canAppend {
+                for device in self.listDevices {
+                    if device.device.identifier == peripheral.identifier  {
+                        canAppend = false
+                        break
+                    }
+                }
             }
-        }
-        
-        // add new item
-        if canAppend {
-            if let peripheralName = peripheral.name?.lowercased() {
-                if peripheralName.contains("scale") {
-                    self.listDevices.append(DeviceModel(device: peripheral, deviceType: .scale))
-                } else {
-                    self.listDevices.append(DeviceModel(device: peripheral, deviceType: .other))
+            
+            // add new item
+            if canAppend {
+                if let peripheralName = peripheral.name?.lowercased() {
+                    if peripheralName.contains("scale") {
+                        self.listDevices.append(DeviceModel(device: peripheral, deviceType: .scale))
+                    } else {
+                        self.listDevices.append(DeviceModel(device: peripheral, deviceType: .other))
+                    }
+                    let newIndexPath = IndexPath(row: (listDevices.count) - 1, section: 0)
+                    self.devicesListTableView.insertRows(at: [newIndexPath], with: .fade)
                 }
             }
         }
     }
 }
+
+// MARK: - UICollectionViewDelegate
+extension ListDevicesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let peripheral = self.myDevices[indexPath.item].peripheral else {
+            self.presentMessage("Your device is disconnected")
+            return
+        }
+        self.centralManager.connect(peripheral)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension ListDevicesViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.myDevices.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = MyDevicesCollectionViewCell.loadCell(collectionView, indexPath: indexPath) as? MyDevicesCollectionViewCell else {
+            return MyDevicesCollectionViewCell()
+        }
+        cell.model = self.myDevices[indexPath.item]
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension ListDevicesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
+}
+
 
 // MARK: - UITableViewDelegate
 extension ListDevicesViewController: UITableViewDelegate {
@@ -115,7 +171,14 @@ extension ListDevicesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let deviceName = self.listDevices[indexPath.row].device.name, deviceName == "1SK-SmartScale68" else { return }
-        self.centralManager.connect(self.listDevices[indexPath.row].device)
+        
+        let myDevice = MyDeviceModel(peripheral: self.listDevices[indexPath.row].device)
+        myDevice.canConnect = true
+        self.myDevices.append(myDevice)
+        AppInfo.myDevices = self.myDevices
+    
+        self.listDevices.remove(at: indexPath.row)
+        self.devicesListTableView.deleteRows(at: [indexPath], with: .fade)
     }
 }
 

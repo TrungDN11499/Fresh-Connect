@@ -12,10 +12,13 @@ class MyDeviceModel: NSObject, NSCoding {
     
     var name: String
     var id: String
+    var peripheral: CBPeripheral?
+    var canConnect = false
     
     init(peripheral: CBPeripheral) {
         self.name = peripheral.name ?? ""
         self.id = peripheral.identifier.uuidString
+        self.peripheral = peripheral
     }
     
     init(name: String, id: String) {

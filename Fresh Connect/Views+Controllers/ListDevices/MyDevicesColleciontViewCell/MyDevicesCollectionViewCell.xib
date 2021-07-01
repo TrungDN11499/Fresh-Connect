@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MyDevicesCollectionViewCell" customModule="Fresh_Connect" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="154" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="154" height="111"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8r-AJ-6R3">
+                        <rect key="frame" x="0.0" y="0.0" width="154" height="111"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scalemass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-Z5-HFq">
+                                <rect key="frame" x="57" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ske-Z5-HFq" secondAttribute="height" id="Qtk-RR-1tI"/>
+                                    <constraint firstAttribute="width" constant="40" id="vId-ME-gZo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97D-AS-njp">
+                                <rect key="frame" x="0.0" y="45" width="154" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dot" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-Y5-RNY">
+                                <rect key="frame" x="57" y="0.0" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Kx2-gN-POb"/>
+                                    <constraint firstAttribute="width" secondItem="fEk-Y5-RNY" secondAttribute="height" id="gUu-QG-az2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="97D-AS-njp" secondAttribute="bottom" constant="5" id="1rs-ZM-FVI"/>
+                            <constraint firstItem="97D-AS-njp" firstAttribute="leading" secondItem="j8r-AJ-6R3" secondAttribute="leading" id="DAx-QE-GP6"/>
+                            <constraint firstItem="97D-AS-njp" firstAttribute="top" secondItem="Ske-Z5-HFq" secondAttribute="bottom" constant="5" id="L66-9z-izv"/>
+                            <constraint firstItem="Ske-Z5-HFq" firstAttribute="centerX" secondItem="j8r-AJ-6R3" secondAttribute="centerX" id="Ma0-G7-6gq"/>
+                            <constraint firstItem="Ske-Z5-HFq" firstAttribute="top" secondItem="j8r-AJ-6R3" secondAttribute="top" id="bbn-ot-FF6"/>
+                            <constraint firstItem="fEk-Y5-RNY" firstAttribute="leading" secondItem="Ske-Z5-HFq" secondAttribute="leading" id="eaE-9C-y7T"/>
+                            <constraint firstItem="97D-AS-njp" firstAttribute="centerX" secondItem="Ske-Z5-HFq" secondAttribute="centerX" id="kqR-Me-TNH"/>
+                            <constraint firstItem="fEk-Y5-RNY" firstAttribute="top" secondItem="Ske-Z5-HFq" secondAttribute="top" id="u7v-gw-tpb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="top" secondItem="j8r-AJ-6R3" secondAttribute="top" id="I0I-ea-aOc"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="j8r-AJ-6R3" secondAttribute="leading" id="JuK-kt-1X8"/>
+                <constraint firstAttribute="bottom" secondItem="j8r-AJ-6R3" secondAttribute="bottom" id="Vaq-aL-Gh5"/>
+                <constraint firstItem="j8r-AJ-6R3" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="r26-9T-KfI"/>
+            </constraints>
+            <size key="customSize" width="154" height="111"/>
+            <connections>
+                <outlet property="connectImageView" destination="fEk-Y5-RNY" id="5FF-45-4K8"/>
+                <outlet property="iconImageView" destination="Ske-Z5-HFq" id="Ng0-5S-nu5"/>
+                <outlet property="nameLabel" destination="97D-AS-njp" id="qA9-jQ-VPH"/>
+            </connections>
+            <point key="canvasLocation" x="145" y="3"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_dot" width="170.5" height="170.5"/>
+        <image name="scalemass" catalog="system" width="128" height="119"/>
+    </resources>
+</document>

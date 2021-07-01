@@ -32,6 +32,9 @@
 		FABA09AB268D5A7D00CE318C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09AA268D5A7D00CE318C /* StringExtension.swift */; };
 		FABA09AE268D954000CE318C /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09AD268D954000CE318C /* AppInfo.swift */; };
 		FABA09B0268D95E300CE318C /* MyDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09AF268D95E300CE318C /* MyDeviceModel.swift */; };
+		FABA09B6268DA50A00CE318C /* MyDevicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09B4268DA50A00CE318C /* MyDevicesCollectionViewCell.swift */; };
+		FABA09B7268DA50A00CE318C /* MyDevicesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABA09B5268DA50A00CE318C /* MyDevicesCollectionViewCell.xib */; };
+		FABA09B9268DBE7B00CE318C /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09B8268DBE7B00CE318C /* ExtensionUIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		FABA09AA268D5A7D00CE318C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FABA09AD268D954000CE318C /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		FABA09AF268D95E300CE318C /* MyDeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDeviceModel.swift; sourceTree = "<group>"; };
+		FABA09B4268DA50A00CE318C /* MyDevicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDevicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABA09B5268DA50A00CE318C /* MyDevicesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDevicesCollectionViewCell.xib; sourceTree = "<group>"; };
+		FABA09B8268DBE7B00CE318C /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		FA9122D7268C6933004D6E77 /* ListDevices */ = {
 			isa = PBXGroup;
 			children = (
+				FABA09B1268DA4C100CE318C /* MyDevicesColleciontViewCell */,
 				FAAA7A46268C296F00F4EEE8 /* ListDevicesTableViewCell */,
 				FA9122D3268C6930004D6E77 /* ListDevicesViewController.swift */,
 				FA9122D4268C6930004D6E77 /* ListDevicesViewController.xib */,
@@ -174,6 +181,7 @@
 			children = (
 				FABA09AA268D5A7D00CE318C /* StringExtension.swift */,
 				FA9122E7268C6CF4004D6E77 /* UIViewExtension.swift */,
+				FABA09B8268DBE7B00CE318C /* ExtensionUIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +280,15 @@
 				FABA09AD268D954000CE318C /* AppInfo.swift */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		FABA09B1268DA4C100CE318C /* MyDevicesColleciontViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FABA09B4268DA50A00CE318C /* MyDevicesCollectionViewCell.swift */,
+				FABA09B5268DA50A00CE318C /* MyDevicesCollectionViewCell.xib */,
+			);
+			path = MyDevicesColleciontViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +401,7 @@
 				FA9122E5268C6BFC004D6E77 /* ListDevicesTableViewCell.xib in Resources */,
 				FAAA7A18268C13D500F4EEE8 /* Main.storyboard in Resources */,
 				FA9122D6268C6930004D6E77 /* ListDevicesViewController.xib in Resources */,
+				FABA09B7268DA50A00CE318C /* MyDevicesCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +428,7 @@
 			files = (
 				FA9122E0268C6B2A004D6E77 /* BaseTableViewCell.swift in Sources */,
 				FA9122D5268C6930004D6E77 /* ListDevicesViewController.swift in Sources */,
+				FABA09B6268DA50A00CE318C /* MyDevicesCollectionViewCell.swift in Sources */,
 				FA9122E8268C6CF4004D6E77 /* UIViewExtension.swift in Sources */,
 				FA9122E1268C6B2A004D6E77 /* BaseCollectionViewCell.swift in Sources */,
 				FAAA7A15268C13D500F4EEE8 /* ViewController.swift in Sources */,
@@ -419,6 +438,7 @@
 				FAAA7A11268C13D500F4EEE8 /* AppDelegate.swift in Sources */,
 				FABA09AB268D5A7D00CE318C /* StringExtension.swift in Sources */,
 				FA9122E4268C6BFC004D6E77 /* ListDevicesTableViewCell.swift in Sources */,
+				FABA09B9268DBE7B00CE318C /* ExtensionUIViewController.swift in Sources */,
 				FAAA7A45268C289D00F4EEE8 /* MeasuringModel.swift in Sources */,
 				FABA09AE268D954000CE318C /* AppInfo.swift in Sources */,
 				FA9122D1268C5AF6004D6E77 /* HTBodyfat_NewSDK.m in Sources */,
