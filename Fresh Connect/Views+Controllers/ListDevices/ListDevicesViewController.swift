@@ -204,10 +204,6 @@ extension ListDevicesViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDele
         return self.getMessageNoData(message: "No device yet");
     }
     
-    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "ic_list_empty")
-    }
-    
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         return true
     }
