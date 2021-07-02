@@ -9,7 +9,7 @@ import UIKit
 import CoreBluetooth
 
 class MeasuringViewController: BaseViewController {
-
+    
     
     let bodyWeightCBUUID = CBUUID(string: "FFF4")
     
@@ -18,8 +18,13 @@ class MeasuringViewController: BaseViewController {
     
     @IBOutlet weak var bodyWeightLabel: UILabel!
     @IBOutlet weak var connectedDeviceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var measuringCollecionView: UICollectionView!
     
+    var measuringModels = [MeasuringModel]() {
+        didSet {
+            self.measuringCollecionView.reloadData()
+        }
+    }
     
     var scalePeripheral: CBPeripheral!
     var centralManager: CBCentralManager!
@@ -40,6 +45,8 @@ class MeasuringViewController: BaseViewController {
         self.connectedDeviceLabel.text = self.scalePeripheral.name
         self.scalePeripheral.delegate = self
         scalePeripheral.discoverServices(nil)
+        
+        MeasuringCollectionViewCell.registerCellByNib(self.measuringCollecionView)
     }
 }
 
@@ -144,9 +151,9 @@ extension MeasuringViewController: CBPeripheralDelegate {
         
         
         if errorType == .none {
-             let thtproteinPercentage = peopleModel.thtproteinPercentage
-                print(String(format: "%.lf", thtproteinPercentage))
-        
+            let thtproteinPercentage = peopleModel.thtproteinPercentage
+            print(String(format: "%.lf", thtproteinPercentage))
+            
             let thtWeightKg = peopleModel.thtWeightKg
             let thtBMI = peopleModel.thtBMI
             let thtWaterPercentage = peopleModel.thtWaterPercentage
@@ -158,20 +165,67 @@ extension MeasuringViewController: CBPeripheralDelegate {
             let ThtBodySubcutaneousFat = peopleModel.thtBodySubcutaneousFat
             let thtBodyAge = peopleModel.thtBodyAge
             let str = String(format: "(Hetai)\ntrọng lượng cơ thể：%.1fKG\nBMI：%.1f\nĐộ ẩm cơ thể：%.1f%%\nmập：%.1f%%\nNội dung cơ bắp：%.1f%\nNội dung xương：%.1fkg\nBMR：%ld\nChất béo nội tạng：%ld\nmỡ dưới da：%.1fKG\nTuổi thân：%ld\n", thtWeightKg, thtBMI, thtWaterPercentage, thtBodyfatPercentage, ThtMusclePercentage, thtBoneKg, thtBMR, thtVFAL, ThtBodySubcutaneousFat, thtBodyAge)
-            self.contentLabel.text = str
-        
+            
+            print(str)
+            
+            self.measuringModels = [MeasuringModel(name: "BMI", value: round(Float(thtBMI) * 10) / 10.0),
+                                    MeasuringModel(name: "Độ ẩm cơ thể", value: round(Float(thtWaterPercentage) * 10) / 10.0, unit: "%"),
+                                    MeasuringModel(name: "mập", value: round(Float(thtBodyfatPercentage) * 10) / 10.0, unit: "%"),
+                                    MeasuringModel(name: "Nội dung cơ bắp", value: round(Float(ThtMusclePercentage) * 10) / 10.0, unit: "%"),
+                                    MeasuringModel(name: "Nội dung xương", value: round(Float(thtBoneKg) * 10) / 10.0, unit: "kg"),
+                                    MeasuringModel(name: "BMR", value: Float(thtBMR)),
+                                    MeasuringModel(name: "Chất béo nội tạng", value: Float(thtVFAL)),
+                                    MeasuringModel(name: "Mỡ dưới da", value: round(Float(ThtBodySubcutaneousFat) * 10) / 10.0),
+                                    MeasuringModel(name: "Tuổi thân", value: Float(thtBodyAge))]
+            
         } else if errorType == .impedance {
-            contentLabel.text = "Khi trở kháng sai, trở kháng sai, Không tính toán chia BMI/idealWeightKg Các thông số khác (ghi 0)"
+            print("Khi trở kháng sai, trở kháng sai, Không tính toán chia BMI/idealWeightKg Các thông số khác (ghi 0)")
         } else if errorType == .age {
-            contentLabel.text = "Tham số tuổi bị sai, cần phải ở trong 10 ~ 99 tuổi (không tính các thông số ngoài BMI / idealWeightKg)"
+            print("Tham số tuổi bị sai, cần phải ở trong 10 ~ 99 tuổi (không tính các thông số ngoài BMI / idealWeightKg)")
         } else if errorType == .weight {
-            contentLabel.text = "Thông số trọng lượng bị sai, cần phải từ 10 ~ 200kg (tất cả các thông số sẽ không được tính nếu sai)"
+            print("Thông số trọng lượng bị sai, cần phải từ 10 ~ 200kg (tất cả các thông số sẽ không được tính nếu sai)")
         } else if errorType == .height {
-            contentLabel.text = "Thông số chiều cao bị sai, cần phải là 90 ~ 220cm (không tính tất cả các thông số)"
+            print("Thông số chiều cao bị sai, cần phải là 90 ~ 220cm (không tính tất cả các thông số)")
         }
         
-
+        
     }
     
+}
+
+// MARK: - UICollectionViewDelegate
+extension MeasuringViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDataSource
+extension MeasuringViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.measuringModels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = MeasuringCollectionViewCell.loadCell(collectionView, indexPath: indexPath) as? MeasuringCollectionViewCell else {
+            return MeasuringCollectionViewCell()
+        }
+        cell.model = self.measuringModels[indexPath.row]
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension MeasuringViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellPadding: CGFloat = 10
+        let cellWidth: CGFloat = (self.view.frame.width - cellPadding * 4) / 3
+        let cellHeight = cellWidth
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
 }
 

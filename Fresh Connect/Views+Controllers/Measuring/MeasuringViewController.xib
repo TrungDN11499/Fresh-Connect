@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="bodyWeightLabel" destination="NTw-w0-F00" id="3aB-0R-nf4"/>
                 <outlet property="connectedDeviceLabel" destination="vIp-Un-IIN" id="QHm-Yj-hT3"/>
-                <outlet property="contentLabel" destination="VIL-Yj-IPH" id="hgd-ha-zA2"/>
+                <outlet property="measuringCollecionView" destination="QR3-Xu-Mig" id="Rpn-dT-sIQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -64,24 +64,29 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trọng lượng cơ thể:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTw-w0-F00">
-                            <rect key="frame" x="10" y="41" width="394" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trọng lượng cơ thể:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTw-w0-F00">
+                            <rect key="frame" x="135" y="41" width="144" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-Yj-IPH">
-                            <rect key="frame" x="10" y="61.5" width="394" height="661.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QR3-Xu-Mig">
+                            <rect key="frame" x="0.0" y="61.5" width="414" height="661.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="URT-6S-hEZ">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="sgI-d4-6FN"/>
+                                <outlet property="delegate" destination="-1" id="pAR-KC-slD"/>
+                            </connections>
+                        </collectionView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="VIL-Yj-IPH" secondAttribute="trailing" constant="10" id="RJM-X0-b0W"/>
-                        <constraint firstItem="NTw-w0-F00" firstAttribute="trailing" secondItem="VIL-Yj-IPH" secondAttribute="trailing" id="WDw-JW-PbE"/>
-                        <constraint firstItem="VIL-Yj-IPH" firstAttribute="leading" secondItem="0WU-V3-yV3" secondAttribute="leading" constant="10" id="lk3-LQ-dtz"/>
-                        <constraint firstItem="NTw-w0-F00" firstAttribute="leading" secondItem="VIL-Yj-IPH" secondAttribute="leading" id="nQn-9d-oJZ"/>
+                        <constraint firstItem="QR3-Xu-Mig" firstAttribute="leading" secondItem="0WU-V3-yV3" secondAttribute="leading" id="vU5-DC-ZuA"/>
                     </constraints>
                 </stackView>
             </subviews>

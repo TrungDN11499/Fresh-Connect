@@ -41,6 +41,8 @@
 		FAC7A5E9268EA92600075997 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5E8268EA92600075997 /* ExtensionUIColor.swift */; };
 		FAC7A5EB268EAA0F00075997 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5EA268EAA0F00075997 /* Helper.swift */; };
 		FAC7A5EE268EAAA900075997 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5ED268EAAA800075997 /* BaseViewController.swift */; };
+		FAC7A5F2268EAF3D00075997 /* MeasuringCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5F0268EAF3D00075997 /* MeasuringCollectionViewCell.swift */; };
+		FAC7A5F3268EAF3D00075997 /* MeasuringCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC7A5F1268EAF3D00075997 /* MeasuringCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		FAC7A5E8268EA92600075997 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		FAC7A5EA268EAA0F00075997 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		FAC7A5ED268EAAA800075997 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FAC7A5F0268EAF3D00075997 /* MeasuringCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasuringCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAC7A5F1268EAF3D00075997 /* MeasuringCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasuringCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 		FA9122D9268C6975004D6E77 /* Measuring */ = {
 			isa = PBXGroup;
 			children = (
+				FAC7A5EF268EAF1700075997 /* MeasuringCollectionViewCell */,
 				FA9122EB268C708A004D6E77 /* MeasuringViewController.swift */,
 				FA9122EC268C708A004D6E77 /* MeasuringViewController.xib */,
 			);
@@ -348,6 +353,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		FAC7A5EF268EAF1700075997 /* MeasuringCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7A5F0268EAF3D00075997 /* MeasuringCollectionViewCell.swift */,
+				FAC7A5F1268EAF3D00075997 /* MeasuringCollectionViewCell.xib */,
+			);
+			path = MeasuringCollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,6 +473,7 @@
 			files = (
 				FA9122EE268C708A004D6E77 /* MeasuringViewController.xib in Resources */,
 				FAAA7A20268C13D800F4EEE8 /* LaunchScreen.storyboard in Resources */,
+				FAC7A5F3268EAF3D00075997 /* MeasuringCollectionViewCell.xib in Resources */,
 				FAAA7A1D268C13D800F4EEE8 /* Assets.xcassets in Resources */,
 				FA9122E5268C6BFC004D6E77 /* ListDevicesTableViewCell.xib in Resources */,
 				FAAA7A18268C13D500F4EEE8 /* Main.storyboard in Resources */,
@@ -593,6 +608,7 @@
 			files = (
 				FA9122E0268C6B2A004D6E77 /* BaseTableViewCell.swift in Sources */,
 				FA9122D5268C6930004D6E77 /* ListDevicesViewController.swift in Sources */,
+				FAC7A5F2268EAF3D00075997 /* MeasuringCollectionViewCell.swift in Sources */,
 				FABA09B6268DA50A00CE318C /* MyDevicesCollectionViewCell.swift in Sources */,
 				FA9122E8268C6CF4004D6E77 /* UIViewExtension.swift in Sources */,
 				FA9122E1268C6B2A004D6E77 /* BaseCollectionViewCell.swift in Sources */,

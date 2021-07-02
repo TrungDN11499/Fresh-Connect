@@ -124,6 +124,17 @@ extension ListDevicesViewController: CBCentralManagerDelegate {
             }
         }
     }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        for i in 0 ..< self.myDevices.count {
+            if peripheral.identifier.uuidString == self.myDevices[i].id {
+                self.myDevices[i].canConnect = false
+                self.myDevices[i].peripheral = nil
+                self.myDeviceCollectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
+                break
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegate
