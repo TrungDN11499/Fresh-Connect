@@ -178,6 +178,18 @@ extension MeasuringViewController: CBPeripheralDelegate {
                                     MeasuringModel(name: "Mỡ dưới da", value: round(Float(ThtBodySubcutaneousFat) * 10) / 10.0),
                                     MeasuringModel(name: "Tuổi thân", value: Float(thtBodyAge))]
             
+//            AppInfo.myResult =  [[MeasuringModel(name: "BMI", value: round(Float(thtBMI) * 10) / 10.0),
+//                                  MeasuringModel(name: "Độ ẩm cơ thể", value: round(Float(thtWaterPercentage) * 10) / 10.0, unit: "%"),
+//                                  MeasuringModel(name: "mập", value: round(Float(thtBodyfatPercentage) * 10) / 10.0, unit: "%"),
+//                                  MeasuringModel(name: "Nội dung cơ bắp", value: round(Float(ThtMusclePercentage) * 10) / 10.0, unit: "%"),
+//                                  MeasuringModel(name: "Nội dung xương", value: round(Float(thtBoneKg) * 10) / 10.0, unit: "kg"),
+//                                  MeasuringModel(name: "BMR", value: Float(thtBMR)),
+//                                  MeasuringModel(name: "Chất béo nội tạng", value: Float(thtVFAL)),
+//                                  MeasuringModel(name: "Mỡ dưới da", value: round(Float(ThtBodySubcutaneousFat) * 10) / 10.0),
+//                                  MeasuringModel(name: "Tuổi thân", value: Float(thtBodyAge))]]
+//
+//            print(AppInfo.myResult)
+//
         } else if errorType == .impedance {
             print("Khi trở kháng sai, trở kháng sai, Không tính toán chia BMI/idealWeightKg Các thông số khác (ghi 0)")
         } else if errorType == .age {

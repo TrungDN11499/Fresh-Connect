@@ -8,6 +8,7 @@
 import Foundation
 
 let K_MYDEVICE = "K_MYDEVICE"
+let K_MYRESULT = "K_MYRESULT"
 
 class AppInfo: NSObject {
     
@@ -26,6 +27,30 @@ class AppInfo: NSObject {
                 do {
                     let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false)
                     UserDefaults.standard.set(encodedData, forKey: K_MYDEVICE)
+                    UserDefaults.standard.synchronize()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    
+    /// Save result
+    static var myResult: [[MeasuringModel]]? {
+        get {
+            guard let decoded = UserDefaults.standard.data(forKey: K_MYRESULT) else {
+                return nil
+            }
+            guard let decodedData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [[MeasuringModel]] else {
+                return nil
+            }
+            return decodedData
+        } set {
+            if let newValue = newValue {
+                do {
+                    let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false)
+                    UserDefaults.standard.set(encodedData, forKey: K_MYRESULT)
                     UserDefaults.standard.synchronize()
                 } catch {
                     print(error.localizedDescription)

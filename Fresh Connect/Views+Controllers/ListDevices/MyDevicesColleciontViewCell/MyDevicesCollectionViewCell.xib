@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dot" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-Y5-RNY">
-                                <rect key="frame" x="57" y="0.0" width="15" height="15"/>
+                                <rect key="frame" x="10" y="10" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Kx2-gN-POb"/>
                                     <constraint firstAttribute="width" secondItem="fEk-Y5-RNY" secondAttribute="height" id="gUu-QG-az2"/>
@@ -55,13 +55,24 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="97D-AS-njp" secondAttribute="bottom" constant="5" id="1rs-ZM-FVI"/>
                             <constraint firstItem="97D-AS-njp" firstAttribute="leading" secondItem="j8r-AJ-6R3" secondAttribute="leading" id="DAx-QE-GP6"/>
+                            <constraint firstItem="fEk-Y5-RNY" firstAttribute="leading" secondItem="j8r-AJ-6R3" secondAttribute="leading" constant="10" id="EMd-xT-4rp"/>
+                            <constraint firstItem="fEk-Y5-RNY" firstAttribute="top" secondItem="j8r-AJ-6R3" secondAttribute="top" constant="10" id="FiS-6N-igI"/>
                             <constraint firstItem="97D-AS-njp" firstAttribute="top" secondItem="Ske-Z5-HFq" secondAttribute="bottom" constant="5" id="L66-9z-izv"/>
                             <constraint firstItem="Ske-Z5-HFq" firstAttribute="centerX" secondItem="j8r-AJ-6R3" secondAttribute="centerX" id="Ma0-G7-6gq"/>
                             <constraint firstItem="Ske-Z5-HFq" firstAttribute="top" secondItem="j8r-AJ-6R3" secondAttribute="top" id="bbn-ot-FF6"/>
-                            <constraint firstItem="fEk-Y5-RNY" firstAttribute="leading" secondItem="Ske-Z5-HFq" secondAttribute="leading" id="eaE-9C-y7T"/>
                             <constraint firstItem="97D-AS-njp" firstAttribute="centerX" secondItem="Ske-Z5-HFq" secondAttribute="centerX" id="kqR-Me-TNH"/>
-                            <constraint firstItem="fEk-Y5-RNY" firstAttribute="top" secondItem="Ske-Z5-HFq" secondAttribute="top" id="u7v-gw-tpb"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
