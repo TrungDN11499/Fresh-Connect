@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreBluetooth
+import DZNEmptyDataSet
 
-class ListDevicesViewController: UIViewController {
+class ListDevicesViewController: BaseViewController {
     
     var centralManager: CBCentralManager!
     @IBOutlet weak var devicesListTableView: UITableView!
@@ -80,6 +81,7 @@ extension ListDevicesViewController: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("connected")
+        self.hideLoading()
         let measuringController = MeasuringViewController(central: self.centralManager, peripheral: peripheral)
         self.navigationController?.pushViewController(measuringController, animated: true)
     }
@@ -135,6 +137,7 @@ extension ListDevicesViewController: UICollectionViewDelegate {
             self.presentMessage("Your device is disconnected")
             return
         }
+        self.showLoading()
         self.centralManager.connect(peripheral)
     }
 }
@@ -192,5 +195,20 @@ extension ListDevicesViewController: UITableViewDataSource {
         guard let cell = ListDevicesTableViewCell.loadCell(tableView, indexPath: indexPath) as? ListDevicesTableViewCell else { return ListDevicesTableViewCell() }
         cell.model = self.listDevices[indexPath.row]
         return cell
+    }
+}
+
+// MARK: - DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+extension ListDevicesViewController : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return self.getMessageNoData(message: "No device yet");
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "ic_list_empty")
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
     }
 }

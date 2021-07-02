@@ -8,7 +8,7 @@
 import UIKit
 import CoreBluetooth
 
-class MeasuringViewController: UIViewController {
+class MeasuringViewController: BaseViewController {
 
     
     let bodyWeightCBUUID = CBUUID(string: "FFF4")

@@ -1,0 +1,20 @@
+PODS:
+  - DZNEmptyDataSet (1.8.1)
+  - MBProgressHUD (1.2.0)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - MBProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - DZNEmptyDataSet
+    - MBProgressHUD
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+
+PODFILE CHECKSUM: 1ff2351f2da57208a77ce5c7387e4ae080412a28
+
+COCOAPODS: 1.10.1

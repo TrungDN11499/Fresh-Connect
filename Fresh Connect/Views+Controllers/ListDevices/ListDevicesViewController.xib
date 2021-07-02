@@ -60,6 +60,8 @@
                     <connections>
                         <outlet property="dataSource" destination="-1" id="eyg-WR-oah"/>
                         <outlet property="delegate" destination="-1" id="nou-AO-eca"/>
+                        <outlet property="emptyDataSetDelegate" destination="-1" id="l8A-dF-8tK"/>
+                        <outlet property="emptyDataSetSource" destination="-1" id="Oyi-8G-UbT"/>
                     </connections>
                 </collectionView>
             </subviews>

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D01C9077FFDDC274D6FD9A7 /* Pods_Fresh_Connect_Fresh_ConnectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCC42233FD634E45F1C9EA1 /* Pods_Fresh_Connect_Fresh_ConnectUITests.framework */; };
+		5E50524655BC8A847E3AA71E /* Pods_Fresh_ConnectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7EF42B40E9EA207A3EEC3D /* Pods_Fresh_ConnectTests.framework */; };
+		F80F145A8BBDC95A32DC852F /* Pods_Fresh_Connect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5383A3FBD25636F4065DC8FC /* Pods_Fresh_Connect.framework */; };
 		FA9122CB268C5329004D6E77 /* HTBodyfat_SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9122C9268C5329004D6E77 /* HTBodyfat_SDK.a */; };
 		FA9122D1268C5AF6004D6E77 /* HTBodyfat_NewSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9122D0268C5AF6004D6E77 /* HTBodyfat_NewSDK.m */; };
 		FA9122D5268C6930004D6E77 /* ListDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9122D3268C6930004D6E77 /* ListDevicesViewController.swift */; };
@@ -35,6 +38,9 @@
 		FABA09B6268DA50A00CE318C /* MyDevicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09B4268DA50A00CE318C /* MyDevicesCollectionViewCell.swift */; };
 		FABA09B7268DA50A00CE318C /* MyDevicesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABA09B5268DA50A00CE318C /* MyDevicesCollectionViewCell.xib */; };
 		FABA09B9268DBE7B00CE318C /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA09B8268DBE7B00CE318C /* ExtensionUIViewController.swift */; };
+		FAC7A5E9268EA92600075997 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5E8268EA92600075997 /* ExtensionUIColor.swift */; };
+		FAC7A5EB268EAA0F00075997 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5EA268EAA0F00075997 /* Helper.swift */; };
+		FAC7A5EE268EAAA900075997 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A5ED268EAAA800075997 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5383A3FBD25636F4065DC8FC /* Pods_Fresh_Connect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fresh_Connect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C1AB9CA03995CD0897B5074 /* Pods-Fresh Connect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh Connect.release.xcconfig"; path = "Target Support Files/Pods-Fresh Connect/Pods-Fresh Connect.release.xcconfig"; sourceTree = "<group>"; };
+		6E03D5278B76D2711C6F21B5 /* Pods-Fresh Connect-Fresh ConnectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh Connect-Fresh ConnectUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fresh Connect-Fresh ConnectUITests/Pods-Fresh Connect-Fresh ConnectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		81BA8DBEEF369FBBDEFD51A8 /* Pods-Fresh ConnectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh ConnectTests.debug.xcconfig"; path = "Target Support Files/Pods-Fresh ConnectTests/Pods-Fresh ConnectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D7EF42B40E9EA207A3EEC3D /* Pods_Fresh_ConnectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fresh_ConnectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E360BC4541E95C5A34ABB8 /* Pods-Fresh ConnectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh ConnectTests.release.xcconfig"; path = "Target Support Files/Pods-Fresh ConnectTests/Pods-Fresh ConnectTests.release.xcconfig"; sourceTree = "<group>"; };
+		A66F7823AC3025C43FB7D1CF /* Pods-Fresh Connect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh Connect.debug.xcconfig"; path = "Target Support Files/Pods-Fresh Connect/Pods-Fresh Connect.debug.xcconfig"; sourceTree = "<group>"; };
+		B75BD9312BB0C3D21CC704A7 /* Pods-Fresh Connect-Fresh ConnectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fresh Connect-Fresh ConnectUITests.release.xcconfig"; path = "Target Support Files/Pods-Fresh Connect-Fresh ConnectUITests/Pods-Fresh Connect-Fresh ConnectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CDCC42233FD634E45F1C9EA1 /* Pods_Fresh_Connect_Fresh_ConnectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fresh_Connect_Fresh_ConnectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9122C9268C5329004D6E77 /* HTBodyfat_SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = HTBodyfat_SDK.a; sourceTree = "<group>"; };
 		FA9122CE268C5AF5004D6E77 /* Fresh Connect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fresh Connect-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA9122CF268C5AF5004D6E77 /* HTBodyfat_NewSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBodyfat_NewSDK.h; sourceTree = "<group>"; };
@@ -92,6 +107,9 @@
 		FABA09B4268DA50A00CE318C /* MyDevicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDevicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FABA09B5268DA50A00CE318C /* MyDevicesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDevicesCollectionViewCell.xib; sourceTree = "<group>"; };
 		FABA09B8268DBE7B00CE318C /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		FAC7A5E8268EA92600075997 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		FAC7A5EA268EAA0F00075997 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		FAC7A5ED268EAAA800075997 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9122CB268C5329004D6E77 /* HTBodyfat_SDK.a in Frameworks */,
+				F80F145A8BBDC95A32DC852F /* Pods_Fresh_Connect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E50524655BC8A847E3AA71E /* Pods_Fresh_ConnectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,15 +134,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D01C9077FFDDC274D6FD9A7 /* Pods_Fresh_Connect_Fresh_ConnectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0580D89A8056BCB3BB65900D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A66F7823AC3025C43FB7D1CF /* Pods-Fresh Connect.debug.xcconfig */,
+				5C1AB9CA03995CD0897B5074 /* Pods-Fresh Connect.release.xcconfig */,
+				6E03D5278B76D2711C6F21B5 /* Pods-Fresh Connect-Fresh ConnectUITests.debug.xcconfig */,
+				B75BD9312BB0C3D21CC704A7 /* Pods-Fresh Connect-Fresh ConnectUITests.release.xcconfig */,
+				81BA8DBEEF369FBBDEFD51A8 /* Pods-Fresh ConnectTests.debug.xcconfig */,
+				A4E360BC4541E95C5A34ABB8 /* Pods-Fresh ConnectTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		99AA655435DD9C07E1FFFC10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5383A3FBD25636F4065DC8FC /* Pods_Fresh_Connect.framework */,
+				CDCC42233FD634E45F1C9EA1 /* Pods_Fresh_Connect_Fresh_ConnectUITests.framework */,
+				9D7EF42B40E9EA207A3EEC3D /* Pods_Fresh_ConnectTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA9122D2268C68F6004D6E77 /* Views+Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAC7A5EC268EAA9C00075997 /* Base */,
 				FA9122D9268C6975004D6E77 /* Measuring */,
 				FA9122D7268C6933004D6E77 /* ListDevices */,
 			);
@@ -182,6 +227,7 @@
 				FABA09AA268D5A7D00CE318C /* StringExtension.swift */,
 				FA9122E7268C6CF4004D6E77 /* UIViewExtension.swift */,
 				FABA09B8268DBE7B00CE318C /* ExtensionUIViewController.swift */,
+				FAC7A5E8268EA92600075997 /* ExtensionUIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -193,6 +239,8 @@
 				FAAA7A29268C13D800F4EEE8 /* Fresh ConnectTests */,
 				FAAA7A34268C13D800F4EEE8 /* Fresh ConnectUITests */,
 				FAAA7A0E268C13D500F4EEE8 /* Products */,
+				0580D89A8056BCB3BB65900D /* Pods */,
+				99AA655435DD9C07E1FFFC10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +318,7 @@
 				FA9122D0268C5AF6004D6E77 /* HTBodyfat_NewSDK.m */,
 				FA9122C9268C5329004D6E77 /* HTBodyfat_SDK.a */,
 				FA9122CE268C5AF5004D6E77 /* Fresh Connect-Bridging-Header.h */,
+				FAC7A5EA268EAA0F00075997 /* Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -291,6 +340,14 @@
 			path = MyDevicesColleciontViewCell;
 			sourceTree = "<group>";
 		};
+		FAC7A5EC268EAA9C00075997 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7A5ED268EAAA800075997 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,9 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAA7A3A268C13D900F4EEE8 /* Build configuration list for PBXNativeTarget "Fresh Connect" */;
 			buildPhases = (
+				AA683176E8D00651AC52A53E /* [CP] Check Pods Manifest.lock */,
 				FAAA7A09268C13D500F4EEE8 /* Sources */,
 				FAAA7A0A268C13D500F4EEE8 /* Frameworks */,
 				FAAA7A0B268C13D500F4EEE8 /* Resources */,
+				93F5FB2DD757A34699FCC4EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,6 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAA7A3D268C13D900F4EEE8 /* Build configuration list for PBXNativeTarget "Fresh ConnectTests" */;
 			buildPhases = (
+				FDAA509BABE7024220FCC877 /* [CP] Check Pods Manifest.lock */,
 				FAAA7A22268C13D800F4EEE8 /* Sources */,
 				FAAA7A23268C13D800F4EEE8 /* Frameworks */,
 				FAAA7A24268C13D800F4EEE8 /* Resources */,
@@ -333,9 +393,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAA7A40268C13D900F4EEE8 /* Build configuration list for PBXNativeTarget "Fresh ConnectUITests" */;
 			buildPhases = (
+				8FB9D3052E23697CB7D0A20C /* [CP] Check Pods Manifest.lock */,
 				FAAA7A2D268C13D800F4EEE8 /* Sources */,
 				FAAA7A2E268C13D800F4EEE8 /* Frameworks */,
 				FAAA7A2F268C13D800F4EEE8 /* Resources */,
+				4089A61730B54739FC2E0DC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -421,6 +483,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4089A61730B54739FC2E0DC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fresh Connect-Fresh ConnectUITests/Pods-Fresh Connect-Fresh ConnectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fresh Connect-Fresh ConnectUITests/Pods-Fresh Connect-Fresh ConnectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fresh Connect-Fresh ConnectUITests/Pods-Fresh Connect-Fresh ConnectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB9D3052E23697CB7D0A20C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fresh Connect-Fresh ConnectUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93F5FB2DD757A34699FCC4EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fresh Connect/Pods-Fresh Connect-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fresh Connect/Pods-Fresh Connect-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fresh Connect/Pods-Fresh Connect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA683176E8D00651AC52A53E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fresh Connect-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDAA509BABE7024220FCC877 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fresh ConnectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAAA7A09268C13D500F4EEE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -431,8 +596,11 @@
 				FABA09B6268DA50A00CE318C /* MyDevicesCollectionViewCell.swift in Sources */,
 				FA9122E8268C6CF4004D6E77 /* UIViewExtension.swift in Sources */,
 				FA9122E1268C6B2A004D6E77 /* BaseCollectionViewCell.swift in Sources */,
+				FAC7A5EE268EAAA900075997 /* BaseViewController.swift in Sources */,
 				FAAA7A15268C13D500F4EEE8 /* ViewController.swift in Sources */,
 				FABA09B0268D95E300CE318C /* MyDeviceModel.swift in Sources */,
+				FAC7A5EB268EAA0F00075997 /* Helper.swift in Sources */,
+				FAC7A5E9268EA92600075997 /* ExtensionUIColor.swift in Sources */,
 				FA9122EA268C6D7A004D6E77 /* DeviceModel.swift in Sources */,
 				FA9122ED268C708A004D6E77 /* MeasuringViewController.swift in Sources */,
 				FAAA7A11268C13D500F4EEE8 /* AppDelegate.swift in Sources */,
@@ -616,6 +784,7 @@
 		};
 		FAAA7A3B268C13D900F4EEE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A66F7823AC3025C43FB7D1CF /* Pods-Fresh Connect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -643,6 +812,7 @@
 		};
 		FAAA7A3C268C13D900F4EEE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C1AB9CA03995CD0897B5074 /* Pods-Fresh Connect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -669,6 +839,7 @@
 		};
 		FAAA7A3E268C13D900F4EEE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81BA8DBEEF369FBBDEFD51A8 /* Pods-Fresh ConnectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -691,6 +862,7 @@
 		};
 		FAAA7A3F268C13D900F4EEE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E360BC4541E95C5A34ABB8 /* Pods-Fresh ConnectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -713,6 +885,7 @@
 		};
 		FAAA7A41268C13D900F4EEE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E03D5278B76D2711C6F21B5 /* Pods-Fresh Connect-Fresh ConnectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -733,6 +906,7 @@
 		};
 		FAAA7A42268C13D900F4EEE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75BD9312BB0C3D21CC704A7 /* Pods-Fresh Connect-Fresh ConnectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

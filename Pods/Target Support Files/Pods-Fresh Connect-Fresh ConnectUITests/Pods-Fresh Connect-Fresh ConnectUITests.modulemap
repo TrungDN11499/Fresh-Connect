@@ -1,0 +1,6 @@
+framework module Pods_Fresh_Connect_Fresh_ConnectUITests {
+  umbrella header "Pods-Fresh Connect-Fresh ConnectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
