@@ -25,10 +25,6 @@ class ListDevicesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        UserDefaults.standard.synchronize()
 
         self.navigationItem.title = "Fresh Connect"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
