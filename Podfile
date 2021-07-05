@@ -9,6 +9,7 @@ target 'Fresh Connect' do
 
 pod 'MBProgressHUD'
 pod 'DZNEmptyDataSet'
+pod 'Charts'
 
   target 'Fresh ConnectTests' do
     inherit! :search_paths

@@ -1,20 +1,26 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - DZNEmptyDataSet (1.8.1)
   - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
+  - Charts
   - DZNEmptyDataSet
   - MBProgressHUD
 
 SPEC REPOS:
   trunk:
+    - Charts
     - DZNEmptyDataSet
     - MBProgressHUD
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: 1ff2351f2da57208a77ce5c7387e4ae080412a28
+PODFILE CHECKSUM: 422ed8ce7c19bde48877be326e35cc66e871e68a
 
 COCOAPODS: 1.10.1

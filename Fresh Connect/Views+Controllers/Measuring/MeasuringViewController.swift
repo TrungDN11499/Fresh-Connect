@@ -41,7 +41,7 @@ class MeasuringViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Fresh Connect"
+        self.navigationItem.title = "Scale"
         self.connectedDeviceLabel.text = self.scalePeripheral.name
         self.scalePeripheral.delegate = self
         scalePeripheral.discoverServices(nil)

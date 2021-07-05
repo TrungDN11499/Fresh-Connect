@@ -76,10 +76,18 @@ extension ListDevicesViewController: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        print("connected")
         self.hideLoading()
-        let measuringController = MeasuringViewController(central: self.centralManager, peripheral: peripheral)
-        self.navigationController?.pushViewController(measuringController, animated: true)
+        guard let name = peripheral.name else {
+            return
+        }
+        
+        if name.contains("1SK-SmartScale")  {
+            let measuringController = MeasuringViewController(central: self.centralManager, peripheral: peripheral)
+            self.navigationController?.pushViewController(measuringController, animated: true)
+        } else if name.contains("ECGRec") {
+            let measuringController = HeartRateMeasuringViewController(central: self.centralManager, peripheral: peripheral)
+            self.navigationController?.pushViewController(measuringController, animated: true)
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
