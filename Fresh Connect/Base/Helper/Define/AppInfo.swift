@@ -35,7 +35,6 @@ class AppInfo: NSObject {
         }
     }
     
-    
     /// Save result
     static var myResult: [[MeasuringModel]]? {
         get {

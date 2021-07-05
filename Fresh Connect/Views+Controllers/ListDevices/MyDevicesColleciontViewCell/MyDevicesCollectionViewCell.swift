@@ -29,6 +29,16 @@ extension MyDevicesCollectionViewCell {
     func setUpData() {
         guard let model = self.model else { return }
         self.nameLabel.text = model.name
+        
+        switch model.deviceType {
+        case 0:
+            self.iconImageView.image = UIImage(systemName: "scalemass")
+        case 1:
+            self.iconImageView.image = UIImage(systemName: "waveform.path.ecg.rectangle")
+        default:
+            self.iconImageView.image = UIImage(systemName: "b.circle")
+        }
+        
         self.connectImageView.image = self.connectImageView.image?.withRenderingMode(.alwaysTemplate)
         self.connectImageView.tintColor = model.canConnect ? .green : .lightGray
         

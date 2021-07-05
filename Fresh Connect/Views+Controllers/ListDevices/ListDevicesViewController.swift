@@ -85,42 +85,45 @@ extension ListDevicesViewController: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
                         advertisementData: [String: Any], rssi RSSI: NSNumber) {
         
-        
-        
-        if peripheral.name == "1SK-SmartScale68" {
-            var canAppend = true
-        
-            for i in 0 ..< self.myDevices.count {
-                if peripheral.identifier.uuidString == self.myDevices[i].id {
-                    self.myDevices[i].canConnect = true
-                    self.myDevices[i].peripheral = peripheral
-                    self.myDeviceCollectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
-                    canAppend = false
-                    break
-                }
-            }
+        if  let name = peripheral.name {
+            if name.contains("1SK-SmartScale") || name.contains("ECGRec") {
+                var canAppend = true
             
-            // loop through the list to check for duplication.
-            if canAppend {
-                for device in self.listDevices {
-                    if device.device.identifier == peripheral.identifier  {
+                for i in 0 ..< self.myDevices.count {
+                    if peripheral.identifier.uuidString == self.myDevices[i].id {
+                        self.myDevices[i].canConnect = true
+                        self.myDevices[i].peripheral = peripheral
+                        self.myDeviceCollectionView.reloadItems(at: [IndexPath(item: i, section: 0)])
                         canAppend = false
                         break
                     }
                 }
-            }
-            
-            // add new item
-            if canAppend {
-                if let peripheralName = peripheral.name?.lowercased() {
-                    if peripheralName.contains("scale") {
-                        self.listDevices.append(DeviceModel(device: peripheral, deviceType: .scale))
-                    } else {
-                        self.listDevices.append(DeviceModel(device: peripheral, deviceType: .other))
+                
+                // loop through the list to check for duplication.
+                if canAppend {
+                    for device in self.listDevices {
+                        if device.device.identifier == peripheral.identifier  {
+                            canAppend = false
+                            break
+                        }
                     }
-                    let newIndexPath = IndexPath(row: (listDevices.count) - 1, section: 0)
-                    self.devicesListTableView.insertRows(at: [newIndexPath], with: .fade)
                 }
+                
+                // add new item
+                if canAppend {
+                    if let peripheralName = peripheral.name {
+                        if peripheralName.contains("Scale") {
+                            self.listDevices.append(DeviceModel(device: peripheral, deviceType: .scale))
+                        } else if peripheralName.contains("ECGRec") {
+                            self.listDevices.append(DeviceModel(device: peripheral, deviceType: .heartRateMonitor))
+                        } else {
+                            self.listDevices.append(DeviceModel(device: peripheral, deviceType: .other))
+                        }
+                        let newIndexPath = IndexPath(row: (listDevices.count) - 1, section: 0)
+                        self.devicesListTableView.insertRows(at: [newIndexPath], with: .fade)
+                    }
+                }
+            
             }
         }
     }
@@ -180,7 +183,7 @@ extension ListDevicesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let deviceName = self.listDevices[indexPath.row].device.name, deviceName == "1SK-SmartScale68" else { return }
+        guard let deviceName = self.listDevices[indexPath.row].device.name, deviceName.contains("1SK-SmartScale") || deviceName.contains("ECGRec") else { return }
         
         let myDevice = MyDeviceModel(peripheral: self.listDevices[indexPath.row].device)
         myDevice.canConnect = true
